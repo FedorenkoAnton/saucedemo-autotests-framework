@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+}
+
+group 'com.saucedemo'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'com.codeborne:selenide:6.12.3'
+
+    testImplementation 'io.cucumber:cucumber-java:7.11.1'
+    testImplementation 'io.cucumber:cucumber-junit-platform-engine:7.11.1'
+
+    testImplementation 'org.junit.platform:junit-platform-suite:1.9.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    testImplementation 'org.hamcrest:java-hamcrest:2.0.0.0'
+
+    testImplementation 'org.slf4j:slf4j-simple:2.0.6'
+    testImplementation 'org.slf4j:slf4j-api:2.0.6'
+
+}
+
+test {
+    useJUnitPlatform()
+//    maxParallelForks = Runtime.getRuntime().availableProcessors()
+}
