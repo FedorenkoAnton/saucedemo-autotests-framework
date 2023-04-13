@@ -26,9 +26,10 @@ dependencies {
     testImplementation 'org.slf4j:slf4j-simple:2.0.6'
     testImplementation 'org.slf4j:slf4j-api:2.0.6'
 
+    testImplementation 'com.epam.reportportal:agent-java-cucumber6:5.1.2'
+
 }
 
 test {
     useJUnitPlatform()
-//    maxParallelForks = Runtime.getRuntime().availableProcessors()
 }
