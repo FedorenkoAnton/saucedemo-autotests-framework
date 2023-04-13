@@ -9,6 +9,7 @@ bin/
 .project
 .classpath
 .settings/
+.gradle
 
 # Gradle-specific files
 gradle/wrapper/gradle-wrapper.jar
