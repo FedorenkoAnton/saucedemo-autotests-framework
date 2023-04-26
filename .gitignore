@@ -1,5 +1,5 @@
 # Gradle build output
-build/
+/build/
 buildSrc/build/
 out/
 bin/
@@ -12,8 +12,8 @@ bin/
 .gradle
 
 # Gradle-specific files
-gradle/wrapper/gradle-wrapper.jar
-gradle/wrapper/gradle-wrapper.properties
+/gradle/wrapper/gradle-wrapper.jar
+/gradle/wrapper/gradle-wrapper.properties
 
 # Temporary files
 *.log
