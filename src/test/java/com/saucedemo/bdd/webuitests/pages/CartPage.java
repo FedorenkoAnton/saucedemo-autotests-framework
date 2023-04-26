@@ -1,4 +1,4 @@
-package com.saucedemo.bdd.pages;
+package com.saucedemo.bdd.webuitests.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.saucedemo.bdd.utils.CartPageUtils;

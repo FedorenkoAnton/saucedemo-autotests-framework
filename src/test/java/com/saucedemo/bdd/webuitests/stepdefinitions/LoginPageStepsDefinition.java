@@ -1,7 +1,7 @@
-package com.saucedemo.bdd.stepdefinitions;
+package com.saucedemo.bdd.webuitests.stepdefinitions;
 
 import com.codeborne.selenide.Configuration;
-import com.saucedemo.bdd.pages.LoginPage;
+import com.saucedemo.bdd.webuitests.pages.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

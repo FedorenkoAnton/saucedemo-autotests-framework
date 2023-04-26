@@ -1,4 +1,4 @@
-package com.saucedemo.bdd.pages;
+package com.saucedemo.bdd.webuitests.pages;
 
 import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;

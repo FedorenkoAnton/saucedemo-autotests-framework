@@ -1,6 +1,6 @@
-package com.saucedemo.bdd.stepdefinitions;
+package com.saucedemo.bdd.webuitests.stepdefinitions;
 
-import com.saucedemo.bdd.pages.CheckoutYourInformationPage;
+import com.saucedemo.bdd.webuitests.pages.CheckoutYourInformationPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 

@@ -1,4 +1,4 @@
-package com.saucedemo.bdd.pages;
+package com.saucedemo.bdd.webuitests.pages;
 
 public class CheckoutOverviewPage extends BasePage {
 

@@ -1,4 +1,4 @@
-package com.saucedemo.bdd.pages;
+package com.saucedemo.bdd.webuitests.pages;
 
 import com.saucedemo.bdd.utils.MainPageUtil;
 import org.hamcrest.Matchers;

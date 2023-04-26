@@ -33,3 +33,16 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+    outputs.upToDateWhen { false }
+}
+
+tasks.register('RunWebUITests', Test).configure(){
+    filter{
+        includeTestsMatching("com.saucedemo.bdd.testrunner.RunWebUITests")
+    }
+}
+
+
