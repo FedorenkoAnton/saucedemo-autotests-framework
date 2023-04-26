@@ -1,8 +1,20 @@
-*.class
+# Gradle build output
 build/
-.gradle
+buildSrc/build/
+out/
+bin/
 
-*.jar
-*.aar
-*.war
-!gradle-wrapper.jar
+# IDE-specific files
+.idea/
+.project
+.classpath
+.settings/
+
+# Gradle-specific files
+gradle/wrapper/gradle-wrapper.jar
+gradle/wrapper/gradle-wrapper.properties
+
+# Temporary files
+*.log
+*.tmp
+tmp/
