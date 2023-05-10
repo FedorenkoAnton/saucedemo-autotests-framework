@@ -1,6 +1,6 @@
 package com.saucedemo.bdd.webuitests.pages;
 
-import com.saucedemo.bdd.utils.MainPageUtil;
+import com.saucedemo.bdd.webuitests.utils.MainPageUtil;
 import org.hamcrest.Matchers;
 
 import java.util.List;

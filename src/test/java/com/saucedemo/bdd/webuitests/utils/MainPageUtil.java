@@ -1,7 +1,7 @@
-package com.saucedemo.bdd.utils;
+package com.saucedemo.bdd.webuitests.utils;
 
 import com.codeborne.selenide.SelenideElement;
-import com.saucedemo.bdd.enums.OrderOptions;
+import com.saucedemo.bdd.webuitests.enums.OrderOptions;
 import org.openqa.selenium.By;
 
 import java.util.Collections;

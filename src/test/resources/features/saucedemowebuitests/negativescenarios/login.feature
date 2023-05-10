@@ -1,6 +1,6 @@
 Feature: Login feature
 
-  @loginEmptyCreds
+  @loginEmptyCreds @UseAfterHook
   Scenario Outline: As a Sauce demo user I cannot log in with empty credentials
     Given user choose '<browser>'
     And opens Login page
@@ -16,7 +16,7 @@ Feature: Login feature
       | edge    |
       | firefox |
 
-  @loginLockedUser
+  @loginLockedUser @UseAfterHook
   Scenario Outline: As locked out user I should not log in to Sauce demo
     Given user choose '<browser>'
     And opens Login page

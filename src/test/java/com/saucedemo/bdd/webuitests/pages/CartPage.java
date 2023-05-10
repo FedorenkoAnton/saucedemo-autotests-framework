@@ -1,8 +1,8 @@
 package com.saucedemo.bdd.webuitests.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.saucedemo.bdd.utils.CartPageUtils;
-import com.saucedemo.bdd.utils.MainPageUtil;
+import com.saucedemo.bdd.webuitests.utils.CartPageUtils;
+import com.saucedemo.bdd.webuitests.utils.MainPageUtil;
 import org.openqa.selenium.By;
 
 import java.util.List;

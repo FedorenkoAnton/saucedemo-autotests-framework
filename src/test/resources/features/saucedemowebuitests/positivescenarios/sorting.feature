@@ -1,6 +1,6 @@
 Feature: Sorting feature
 
-  @sortFromZtoA
+  @sortFromZtoA @UseAfterHook
   Scenario Outline: As a Saucedemo user I want to sort items alphabetically in ascending order
     Given user choose '<browser>'
     And opens Login page
@@ -17,7 +17,7 @@ Feature: Sorting feature
       | edge    |
       | firefox |
 
-  @sortFromLowToHigh
+  @sortFromLowToHigh @UseAfterHook
   Scenario Outline: As a Saucedemo user I want to sort items by price from low to high
     Given user choose '<browser>'
     And opens Login page

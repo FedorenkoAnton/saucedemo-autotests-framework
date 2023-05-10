@@ -1,4 +1,4 @@
-package com.saucedemo.bdd.enums;
+package com.saucedemo.bdd.webuitests.enums;
 
 import java.util.Arrays;
 import java.util.Objects;

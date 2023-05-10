@@ -1,6 +1,6 @@
 Feature: Adding and removing products
 
-  @addItemsToCart
+  @addItemsToCart @UseAfterHook
   Scenario Outline: As a Saucedemo user I want to add products to the cart and find them there
     Given user choose '<browser>'
     And opens Login page
@@ -19,7 +19,7 @@ Feature: Adding and removing products
       | edge    |
       | firefox |
 
-  @removeAddedItemsFromCart
+  @removeAddedItemsFromCart @UseAfterHook
   Scenario Outline: As a Saucedemo user I want to remove accidentally added products from the cart
     Given user choose '<browser>'
     And opens Login page

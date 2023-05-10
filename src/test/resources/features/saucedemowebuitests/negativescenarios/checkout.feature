@@ -1,6 +1,6 @@
 Feature: Checkout feature
 
-  @CheckoutNoCustomerDataProvided
+  @CheckoutNoCustomerDataProvided @UseAfterHook
   Scenario Outline: As a Sauce demo user I cannot checkout products without entering my data
     Given user choose '<browser>'
     And opens Login page
@@ -19,7 +19,7 @@ Feature: Checkout feature
       | edge    |
       | firefox |
 
-  @CheckoutEmptyCart
+  @CheckoutEmptyCart @UseAfterHook
   Scenario Outline: As a Sauce demo user I cannot checkout empty cart
     Given user choose '<browser>'
     And opens Login page

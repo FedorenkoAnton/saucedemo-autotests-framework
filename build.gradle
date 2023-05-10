@@ -26,7 +26,16 @@ dependencies {
     testImplementation 'org.slf4j:slf4j-simple:2.0.6'
     testImplementation 'org.slf4j:slf4j-api:2.0.6'
 
+    testImplementation 'io.rest-assured:rest-assured:5.3.0'
+
+    implementation 'com.google.code.gson:gson:2.10.1'
+
     testImplementation 'com.epam.reportportal:agent-java-cucumber6:5.1.2'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.26'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+    implementation 'io.cucumber:cucumber-picocontainer:7.11.1'
 
 }
 
@@ -42,6 +51,12 @@ tasks.withType(Test) {
 tasks.register('RunWebUITests', Test).configure(){
     filter{
         includeTestsMatching("com.saucedemo.bdd.testrunner.RunWebUITests")
+    }
+}
+
+tasks.register('RunRestApiTests', Test).configure(){
+    filter{
+        includeTestsMatching("com.saucedemo.bdd.testrunner.RunRestApiTests")
     }
 }
 

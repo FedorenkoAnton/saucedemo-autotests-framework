@@ -1,7 +1,7 @@
 package com.saucedemo.bdd.webuitests.stepdefinitions;
 
 import com.saucedemo.bdd.webuitests.pages.MainPage;
-import com.saucedemo.bdd.utils.MainPageUtil;
+import com.saucedemo.bdd.webuitests.utils.MainPageUtil;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

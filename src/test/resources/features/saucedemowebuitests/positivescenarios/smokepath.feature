@@ -1,6 +1,6 @@
 Feature: Smoke path
 
-  @SmokePath
+  @SmokePath @UseAfterHook
   Scenario Outline: As a Saucedemo customer I want to order and checkout desired product
     Given user choose '<browser>'
     And opens Login page
