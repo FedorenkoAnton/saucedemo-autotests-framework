@@ -49,7 +49,6 @@ test {
 
 tasks.withType(Test) {
     useJUnitPlatform()
-    outputs.upToDateWhen { false }
 }
 
 tasks.register('RunWebUITests', Test).configure(){
