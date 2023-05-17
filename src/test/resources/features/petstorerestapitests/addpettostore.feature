@@ -4,7 +4,7 @@ Feature: Add new pet to the store
     Given user sets up the <endpoint>
     And sets up request body <content type>
     And sets up accepted <media type>
-    And assigns request body
+    And assigns <request body>
     And sends request with Post method
     When response is got service code should be <expected response code>
     And response body is not empty
@@ -12,5 +12,6 @@ Feature: Add new pet to the store
     And response body's field name should be spankey
 
     Examples:
-      | endpoint | content type     | media type       | expected response code |
-      | /pet     | application/json | application/json | 200                    |
+      | endpoint | content type     | media type       | request body                       | expected response code |
+      | /pet     | application/json | application/json | json/add_new_pet_request_body.json | 200                    |
+      | /pet     | application/xml  | application/xml  | xml/add_new_pet_request_body.xml   | 200                    |

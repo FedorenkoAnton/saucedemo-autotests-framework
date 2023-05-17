@@ -3,6 +3,7 @@ package com.saucedemo.bdd.restapitests.stepdefinitions;
 import com.saucedemo.bdd.restapitests.enums.HttpMethods;
 import com.saucedemo.bdd.restapitests.stepdefinitions.containers.RequestBuilderContainer;
 import com.saucedemo.bdd.restapitests.stepdefinitions.containers.ResponseContainer;
+import com.saucedemo.bdd.restapitests.utils.JsonReader;
 import com.saucedemo.bdd.restapitests.utils.RequestSender;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -41,6 +42,12 @@ public class GeneralSteps {
         Response response = RequestSender.sendRequestWithMethod(requestBuilderContainer.getRequestSpecBuilder(),
                 HttpMethods.from(requestMethod));
         responseContainer.setResponse(response);
+    }
+
+    @And("^assigns (.*)?")
+    public void assignRequestBody(String pathToRequestBody) {
+        requestBuilderContainer.getRequestSpecBuilder().setBody(JsonReader.
+                readFromFile(String.format("src/test/resources/requestbodies/%s", pathToRequestBody)));
     }
 
 }

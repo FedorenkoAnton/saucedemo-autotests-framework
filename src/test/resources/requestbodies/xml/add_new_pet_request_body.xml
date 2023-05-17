@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Pet>
-    <id>0</id>
+    <id>9999</id>
     <Category>
         <id>0</id>
         <name>string</name>
     </Category>
-    <name>doggie</name>
+    <name>spankey</name>
     <photoUrls>
         <photoUrl>string</photoUrl>
     </photoUrls>

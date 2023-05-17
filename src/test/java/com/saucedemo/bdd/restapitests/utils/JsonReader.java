@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class JsonReader {
 
-    public static String readJsonFromFile(String path) {
+    public static String readFromFile(String path) {
         StringBuilder jsonFromFile = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             String line;
