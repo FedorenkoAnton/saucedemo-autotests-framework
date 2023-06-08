@@ -9,10 +9,10 @@ public class RequestSender {
 
     public static Response sendRequestWithMethod(RequestSpecBuilder requestSpecBuilder, HttpMethods httpMethod) {
         switch (httpMethod) {
-            case GET: return requestSpecBuilder.build().given().get().then().extract().response();
-            case PUT: return requestSpecBuilder.build().given().put().then().extract().response();
+            case GET: return RestAssured.given(requestSpecBuilder.build()).get().then().extract().response();
+            case PUT: return RestAssured.given(requestSpecBuilder.build()).put().then().extract().response();
             case POST: return RestAssured.given(requestSpecBuilder.build()).post().then().extract().response();
-            case DELETE: return requestSpecBuilder.build().given().delete().then().extract().response();
+            case DELETE: return RestAssured.given(requestSpecBuilder.build()).delete().then().extract().response();
             default:
                 throw new IllegalArgumentException(String.format("Unknown type of method: %s", httpMethod.value));
         }

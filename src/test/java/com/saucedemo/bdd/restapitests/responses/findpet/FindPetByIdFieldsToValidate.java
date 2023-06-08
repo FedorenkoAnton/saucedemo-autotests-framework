@@ -1,4 +1,4 @@
-package com.saucedemo.bdd.restapitests.responses;
+package com.saucedemo.bdd.restapitests.responses.findpet;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
@@ -10,7 +10,7 @@ import lombok.Setter;
 @JacksonXmlRootElement(localName = "Pet")
 @Getter
 @Setter
-public class AddNewPetFieldsToValidate {
+public class FindPetByIdFieldsToValidate {
     @JacksonXmlProperty(localName = "id")
     private int id;
 

@@ -1,6 +1,6 @@
 package com.saucedemo.bdd.restapitests.stepdefinitions;
 
-import com.saucedemo.bdd.restapitests.responses.UploadImageFieldsToValidate;
+import com.saucedemo.bdd.restapitests.responses.addpettostore.UploadImageFieldsToValidate;
 import com.saucedemo.bdd.restapitests.stepdefinitions.containers.ResponseContainer;
 import com.saucedemo.bdd.restapitests.utils.ResponseParser;
 import io.cucumber.java.en.And;
