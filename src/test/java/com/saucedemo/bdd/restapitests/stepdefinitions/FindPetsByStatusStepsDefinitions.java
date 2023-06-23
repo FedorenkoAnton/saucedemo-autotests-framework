@@ -5,13 +5,13 @@ import com.saucedemo.bdd.restapitests.responses.findpet.FindPetByStatusResponse;
 import com.saucedemo.bdd.restapitests.stepdefinitions.containers.ResponseContainer;
 import com.saucedemo.bdd.restapitests.utils.responseparsers.JsonXmlArrayToListOfPojoParser;
 import io.cucumber.java.en.Then;
-import org.hamcrest.Matchers;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.everyItem;
+import static org.hamcrest.Matchers.is;
 
 public class FindPetsByStatusStepsDefinitions {
 
