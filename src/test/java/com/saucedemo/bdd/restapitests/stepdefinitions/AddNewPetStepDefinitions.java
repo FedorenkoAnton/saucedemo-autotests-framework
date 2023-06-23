@@ -1,8 +1,8 @@
 package com.saucedemo.bdd.restapitests.stepdefinitions;
 
-import com.saucedemo.bdd.restapitests.responses.addpettostore.AddNewPetFieldsToValidate;
+import com.saucedemo.bdd.restapitests.responses.addpettostore.AddNewPetResponse;
 import com.saucedemo.bdd.restapitests.stepdefinitions.containers.ResponseContainer;
-import com.saucedemo.bdd.restapitests.utils.ResponseParser;
+import com.saucedemo.bdd.restapitests.utils.responseparsers.ResponseParser;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import lombok.extern.slf4j.Slf4j;
@@ -13,24 +13,24 @@ import static org.hamcrest.Matchers.is;
 
 @Slf4j
 public class AddNewPetStepDefinitions {
-    private final AddNewPetFieldsToValidate addNewPetFieldsToValidate;
+    private final AddNewPetResponse addNewPetResponse;
 
     public AddNewPetStepDefinitions(ResponseContainer responseContainer) {
-        this.addNewPetFieldsToValidate = new ResponseParser()
-                .getResponseAsObject(responseContainer.getResponse(), AddNewPetFieldsToValidate.class);
+        this.addNewPetResponse = new ResponseParser()
+                .getResponseAsObject(responseContainer.getResponse(), AddNewPetResponse.class);
     }
 
 
     @Then("^response body's field id should be (.*)?")
-    public void responseBodySFieldIdShouldBe(int id) {
-        int idFromResponse = this.addNewPetFieldsToValidate.getId();
+    public void responseBodySFieldIdShouldBe(long id) {
+        long idFromResponse = this.addNewPetResponse.getId();
         assertThat(String.format("'id' field's value is %s expected, to be %s", idFromResponse, id), idFromResponse,
                 is(equalTo(id)));
     }
 
     @And("^response body's field name should be (.*)?")
     public void responseBodySFieldNameShouldBeSpankey(String name) {
-        String nameFromResponse = this.addNewPetFieldsToValidate.getName();
+        String nameFromResponse = this.addNewPetResponse.getName();
         assertThat(String.format("'name field's value is %s, expected to be %s", nameFromResponse, name),
                 nameFromResponse, is(equalTo(name)));
     }

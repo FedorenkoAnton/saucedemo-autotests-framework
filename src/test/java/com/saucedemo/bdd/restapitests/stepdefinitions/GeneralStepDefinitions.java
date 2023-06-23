@@ -1,6 +1,7 @@
 package com.saucedemo.bdd.restapitests.stepdefinitions;
 
 import com.saucedemo.bdd.restapitests.enums.HttpMethods;
+import com.saucedemo.bdd.restapitests.enums.PetStatus;
 import com.saucedemo.bdd.restapitests.stepdefinitions.containers.RequestBuilderContainer;
 import com.saucedemo.bdd.restapitests.stepdefinitions.containers.ResponseContainer;
 import com.saucedemo.bdd.restapitests.utils.RequestSender;
@@ -8,6 +9,7 @@ import com.saucedemo.bdd.restapitests.utils.SetBodyUtils;
 import com.saucedemo.bdd.restapitests.utils.urlutils.PathConstructor;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
@@ -31,8 +33,10 @@ public class GeneralStepDefinitions {
 
     @Given("^user sets up the endpoint (.*)$")
     public void userSetupTheEndpoint(String path) {
+        String endpoint = new PathConstructor(path, variablePartsOfPath).createPath();
         requestBuilderContainer.getRequestSpecBuilder().setBaseUri(PET_STORE_BASE_URL)
-                .setBasePath(new PathConstructor(path, variablePartsOfPath).createPath());
+                .setBasePath(endpoint);
+        log.info(String.format("Send request to endpoint: %s", PET_STORE_BASE_URL + endpoint));
     }
 
     @And("^sets up request body (.*)$")
@@ -54,8 +58,8 @@ public class GeneralStepDefinitions {
 
     @And("^sends request to \\'(.*)\\' with http method (.*)$")
     public void sendRequest(String endpointName, String requestMethod) {
-        Response response = RequestSender.sendRequestWithMethod(requestBuilderContainer.getRequestSpecBuilder(),
-                HttpMethods.from(requestMethod));
+        Response response = RequestSender.sendRequestWithMethod(
+                requestBuilderContainer.getRequestSpecBuilder().log(LogDetail.ALL), HttpMethods.from(requestMethod));
         responseContainer.setResponse(response);
         log.info(logResponse(endpointName, responseContainer));
     }
@@ -69,5 +73,10 @@ public class GeneralStepDefinitions {
         String response = responseContainer.getResponse().asPrettyString();
         String newLineAndMultipleAstrix = "\n*******************************************";
         return String.format("\nResponse from %s: %s%s", endpointName, response, newLineAndMultipleAstrix);
+    }
+
+    @And("^user sets up pet (.*) to the request$")
+    public void userSetsUpPetStatusToTheRequest(String petStatus) {
+        requestBuilderContainer.getRequestSpecBuilder().addParam("status", PetStatus.from(petStatus).value);
     }
 }

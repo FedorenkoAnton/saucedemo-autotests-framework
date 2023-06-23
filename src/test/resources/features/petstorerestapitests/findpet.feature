@@ -19,3 +19,20 @@ Feature: Find pet in the store
       | content type     | media type for Store operation | request's body location            | media type for get pet by id operation |
       | application/json | application/json               | json/add_new_pet_request_body.json | application/json                       |
       | application/xml  | application/xml                | xml/add_new_pet_request_body.xml   | application/xml                        |
+
+  Scenario Outline: As a pet store customer I want to find pets by status
+    Given user sets up the endpoint /pet/findByStatus
+    And user sets up pet <status> to the request
+    And sets up accepted media type <media type>
+    And sends request to 'find pets by status endpoint' with http method Get
+    When response is got service code should be 200
+    Then field 'status' of each pet from response is equal to <status>
+
+    Examples:
+      | status    | media type       |
+      | available | application/json |
+      | available | application/xml  |
+      | pending   | application/json |
+      | pending   | application/xml  |
+      | sold      | application/json |
+      | sold      | application/xml  |

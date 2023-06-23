@@ -7,7 +7,8 @@ import lombok.Setter;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Getter
 @Setter
-public class UploadImageFieldsToValidate {
+public class UploadImageResponse {
     private int code;
+    private String type;
     private String message;
 }

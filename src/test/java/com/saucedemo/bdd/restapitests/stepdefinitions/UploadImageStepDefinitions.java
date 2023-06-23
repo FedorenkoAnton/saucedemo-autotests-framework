@@ -1,8 +1,8 @@
 package com.saucedemo.bdd.restapitests.stepdefinitions;
 
-import com.saucedemo.bdd.restapitests.responses.addpettostore.UploadImageFieldsToValidate;
+import com.saucedemo.bdd.restapitests.responses.addpettostore.UploadImageResponse;
 import com.saucedemo.bdd.restapitests.stepdefinitions.containers.ResponseContainer;
-import com.saucedemo.bdd.restapitests.utils.ResponseParser;
+import com.saucedemo.bdd.restapitests.utils.responseparsers.ResponseParser;
 import io.cucumber.java.en.And;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class UploadImageStepDefinitions {
     private final ResponseContainer responseContainer;
     private final ResponseParser responseParser;
-    private UploadImageFieldsToValidate uploadImageFieldsToValidate;
+    private UploadImageResponse uploadImageResponse;
 
     public UploadImageStepDefinitions(ResponseContainer responseContainer) {
         this.responseContainer = responseContainer;
@@ -19,16 +19,16 @@ public class UploadImageStepDefinitions {
     }
     @And("^status code from response body is (.*)?")
     public void checkStatusCodeInResponseBody(int expectedStatusCode) {
-        uploadImageFieldsToValidate = responseParser.getResponseAsObject(responseContainer.getResponse(),
-                UploadImageFieldsToValidate.class);
-        int actualStatusCode = uploadImageFieldsToValidate.getCode();
+        uploadImageResponse = responseParser.getResponseAsObject(responseContainer.getResponse(),
+                UploadImageResponse.class);
+        int actualStatusCode = uploadImageResponse.getCode();
         assertThat(String.format("Expected status code is %s, but actual is %s", expectedStatusCode, actualStatusCode),
                 actualStatusCode, equalTo(expectedStatusCode));
     }
 
     @And("^file size is (.*) bytes?")
     public void fileSizeIsBytes(long expectedFileSize) {
-        long actualFileSize = getFileSize(uploadImageFieldsToValidate.getMessage());
+        long actualFileSize = getFileSize(uploadImageResponse.getMessage());
         assertThat(String.format("Expected file size is %s, but actual is %s", expectedFileSize, actualFileSize),
                 actualFileSize, equalTo(expectedFileSize));
     }

@@ -1,4 +1,4 @@
-package com.saucedemo.bdd.restapitests.utils;
+package com.saucedemo.bdd.restapitests.utils.responseparsers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
