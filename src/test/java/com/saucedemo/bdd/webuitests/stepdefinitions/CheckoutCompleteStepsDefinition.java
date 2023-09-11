@@ -8,14 +8,8 @@ import java.util.Objects;
 public class CheckoutCompleteStepsDefinition extends CheckoutCompletePage {
 
     @Then("^Complete (header|text) is on Checkout complete page and matches the expected '([^\"]*)'$")
-    public void completeTextElementIsOnCheckoutCompletePageAndMatchesTheExample(String completeTextElement,
-                                                                                String expectedHeaderText) {
-        if (Objects.equals(completeTextElement, "header")) {
-            checkCompleteHeaderDisplayed();
-            checkCompleteHeaderTextCorrespondsToExpected(expectedHeaderText);
-        } else if (Objects.equals(completeTextElement, "text")) {
-            checkCompleteTextDisplayed();
-            checkCompleteTextCorrespondsToExpected(expectedHeaderText);
-        }
+    public void completeTextElementIsOnCheckoutCompletePageAndMatchesTheExample(String typeOfTextElement,
+                                                                                String expectedText) {
+        checkCompleteMessageCorrespondsToExpected(typeOfTextElement, expectedText);
     }
 }
