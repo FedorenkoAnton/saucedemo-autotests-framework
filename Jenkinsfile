@@ -27,7 +27,7 @@ pipeline {
             }
 
             steps {
-                sh "gradle clean RubWebUITests"
+                sh "gradle clean RunWebUITests"
             }
         }
     }
