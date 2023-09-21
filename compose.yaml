@@ -18,27 +18,31 @@ services:
 
   selenium_node_chrome:
     image: selenium/node-chrome:latest
+    depends_on:
+      - selenium_hub
     environment:
+      - HUB_HOST=selenium_hub
       - SE_EVENT_BUS_HOST=selenium_hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-    links:
-      - "selenium_hub"
+
 
   selenium_node_firefox:
     image: selenium/node-firefox:latest
+    depends_on:
+      - selenium_hub
     environment:
+      - HUB_HOST=selenium_hub
       - SE_EVENT_BUS_HOST=selenium_hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-    links:
-      - "selenium_hub"
 
   selenium_node_edge:
     image: selenium/node-edge:latest
+    depends_on:
+      - selenium_hub
     environment:
+      - HUB_HOST=selenium_hub
       - SE_EVENT_BUS_HOST=selenium_hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-    links:
-      - "selenium_hub"
