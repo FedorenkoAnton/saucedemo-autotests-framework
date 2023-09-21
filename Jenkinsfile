@@ -7,7 +7,7 @@ pipeline {
 
     parameters {
         booleanParam(defaultValue: true, description: 'run rest tests', name: 'rest')
-        booleanParam(defaultValue: false, description: 'run web ui tests', name: 'web_ui')
+        booleanParam(defaultValue: true, description: 'run web ui tests', name: 'web_ui')
     }
 
     stages {
@@ -27,7 +27,7 @@ pipeline {
             }
 
             steps {
-                sh "gradle clean RubWebUITests"
+                sh "gradle clean RunWebUITests"
             }
         }
     }

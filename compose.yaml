@@ -1,0 +1,51 @@
+version: '2.4'
+services:
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    ports:
+      - 127.0.0.1:8080:8080
+    volumes:
+      - C:\Users\Anton_Fedorenko2\jenkins_home:/var/jenkins_home
+
+  selenium_hub:
+    image: selenium/hub:latest
+    ports:
+      - 127.0.0.1:7900:7900
+      - 127.0.0.1:4442:4442
+      - 127.0.0.1:4443:4443
+      - 127.0.0.1:4444:4444
+
+  selenium_node_chrome:
+    image: selenium/node-chrome:latest
+    depends_on:
+      - selenium_hub
+    environment:
+      - HUB_HOST=selenium_hub
+      - SE_EVENT_BUS_HOST=selenium_hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=3
+
+
+  selenium_node_firefox:
+    image: selenium/node-firefox:latest
+    depends_on:
+      - selenium_hub
+    environment:
+      - HUB_HOST=selenium_hub
+      - SE_EVENT_BUS_HOST=selenium_hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=3
+
+  selenium_node_edge:
+    image: selenium/node-edge:latest
+    depends_on:
+      - selenium_hub
+    environment:
+      - HUB_HOST=selenium_hub
+      - SE_EVENT_BUS_HOST=selenium_hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=3
