@@ -3,6 +3,7 @@ build/
 buildSrc/build/
 out/
 bin/
+.gradle/
 
 # IDE-specific files
 .idea/
