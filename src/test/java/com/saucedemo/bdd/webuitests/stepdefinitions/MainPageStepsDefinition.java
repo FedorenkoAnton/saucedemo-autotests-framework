@@ -9,6 +9,10 @@ import io.cucumber.java.en.When;
 import java.util.Map;
 import java.util.Objects;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+
 public class MainPageStepsDefinition extends MainPage {
     private final Map<String, String> products = MainPageUtil.createMapWithProducts();
 
@@ -47,5 +51,13 @@ public class MainPageStepsDefinition extends MainPage {
         } else {
             throw new IllegalArgumentException(String.format("Unknown ordering type: %s", orderingType));
         }
+    }
+
+    @Then("^user see amount of products on cart icon is ([^\"]*)$")
+    public void userSeeAmountOfProductsOnCartIconIs(String expectedAmountOfProducts) {
+        String actualAmountOfProducts = getAmountOfProductsFromShoppingCartBadge();
+        assertThat(String.format("Amount of products on the badge: %s, expected: %s",
+                        actualAmountOfProducts, expectedAmountOfProducts),
+                actualAmountOfProducts, is(equalTo(expectedAmountOfProducts)));
     }
 }
