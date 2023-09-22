@@ -2,10 +2,12 @@ package com.saucedemo.bdd.webuitests.pages;
 
 import com.saucedemo.bdd.webuitests.utils.MainPageUtil;
 import org.hamcrest.Matchers;
+import org.openqa.selenium.By;
 
 import java.util.List;
 import java.util.Map;
 
+import static com.codeborne.selenide.Selenide.$;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class MainPage extends BasePage {
@@ -16,6 +18,7 @@ public class MainPage extends BasePage {
     private final static String PRODUCT_SORT_DROPDOWN_XPATH = "//select[@class='product_sort_container']";
     private final static String Z_TO_A_SORT_OPTION_XPATH = "//option[@value='za']";
     private final static String HIGH_TO_LOW_PRICE_SORT_OPTION_XPATH = "//option[@value='hilo']";
+    private final static String SHOPPING_CART_BADGE_XPATH = "//span[@class='shopping_cart_badge']";
 
     protected void clickOnCartIcon() {
         clickButton(CART_ICON_XPATH);
@@ -51,6 +54,10 @@ public class MainPage extends BasePage {
                 MainPageUtil.getProductsPrices());
         assertThat("Products are not sorted in descending order by price",
                 productsAfterSortingByPrice, Matchers.equalTo(expectedProductsOrder));
+    }
+
+    protected String getAmountOfProductsFromShoppingCartBadge() {
+        return $(By.xpath(SHOPPING_CART_BADGE_XPATH)).getText().trim();
     }
 
 }
