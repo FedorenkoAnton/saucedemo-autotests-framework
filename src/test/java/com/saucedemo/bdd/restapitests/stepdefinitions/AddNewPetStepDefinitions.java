@@ -1,6 +1,6 @@
 package com.saucedemo.bdd.restapitests.stepdefinitions;
 
-import com.saucedemo.bdd.restapitests.responses.addpettostore.AddNewPetResponse;
+import com.saucedemo.bdd.restapitests.responsebodymodel.addpettostore.AddNewPetResponse;
 import com.saucedemo.bdd.restapitests.stepdefinitions.containers.ResponseContainer;
 import com.saucedemo.bdd.restapitests.utils.responseparsers.ResponseParser;
 import io.cucumber.java.en.And;

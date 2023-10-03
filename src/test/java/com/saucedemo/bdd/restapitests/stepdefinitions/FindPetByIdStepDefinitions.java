@@ -1,6 +1,6 @@
 package com.saucedemo.bdd.restapitests.stepdefinitions;
 
-import com.saucedemo.bdd.restapitests.responses.findpet.FindPetByIdResponse;
+import com.saucedemo.bdd.restapitests.responsebodymodel.findpet.FindPetByIdResponse;
 import com.saucedemo.bdd.restapitests.stepdefinitions.containers.ResponseContainer;
 import com.saucedemo.bdd.restapitests.utils.responseparsers.ResponseParser;
 import io.cucumber.java.en.And;
@@ -16,6 +16,7 @@ public class FindPetByIdStepDefinitions {
         this.findPetByIdResponse = new ResponseParser()
                 .getResponseAsObject(responseContainer.getResponse(), FindPetByIdResponse.class);
     }
+
     @And("^field 'id' from response body is (.*)$")
     public void fieldIdFromResponseBodyIs(long expectedId) {
         long idFromResponse = this.findPetByIdResponse.getId();
