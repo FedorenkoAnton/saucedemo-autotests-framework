@@ -1,8 +1,8 @@
-package com.saucedemo.bdd.restapitests.responses.findpet;
+package com.saucedemo.bdd.restapitests.responsebodymodel.findpet;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.saucedemo.bdd.restapitests.responses.Category;
-import com.saucedemo.bdd.restapitests.responses.Tag;
+import com.saucedemo.bdd.restapitests.responsebodymodel.Category;
+import com.saucedemo.bdd.restapitests.responsebodymodel.Tag;
 import lombok.Getter;
 import lombok.Setter;
 

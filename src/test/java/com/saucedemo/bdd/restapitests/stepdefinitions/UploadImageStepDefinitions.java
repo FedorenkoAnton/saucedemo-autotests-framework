@@ -1,6 +1,6 @@
 package com.saucedemo.bdd.restapitests.stepdefinitions;
 
-import com.saucedemo.bdd.restapitests.responses.addpettostore.UploadImageResponse;
+import com.saucedemo.bdd.restapitests.responsebodymodel.addpettostore.UploadImageResponse;
 import com.saucedemo.bdd.restapitests.stepdefinitions.containers.ResponseContainer;
 import com.saucedemo.bdd.restapitests.utils.responseparsers.ResponseParser;
 import io.cucumber.java.en.And;
@@ -17,6 +17,7 @@ public class UploadImageStepDefinitions {
         this.responseContainer = responseContainer;
         responseParser = new ResponseParser();
     }
+
     @And("^status code from response body is (.*)?")
     public void checkStatusCodeInResponseBody(int expectedStatusCode) {
         uploadImageResponse = responseParser.getResponseAsObject(responseContainer.getResponse(),

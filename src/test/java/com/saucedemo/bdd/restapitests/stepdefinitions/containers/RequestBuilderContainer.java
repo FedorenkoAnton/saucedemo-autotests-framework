@@ -2,8 +2,16 @@ package com.saucedemo.bdd.restapitests.stepdefinitions.containers;
 
 import io.restassured.builder.RequestSpecBuilder;
 import lombok.Getter;
+import lombok.Setter;
 
-@Getter
+@Setter
 public class RequestBuilderContainer {
-    private final RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
+    private RequestSpecBuilder requestSpecBuilder;
+
+    public RequestSpecBuilder getRequestSpecBuilder() {
+        if (this.requestSpecBuilder == null) {
+            requestSpecBuilder = new RequestSpecBuilder();
+        }
+        return requestSpecBuilder;
+    }
 }

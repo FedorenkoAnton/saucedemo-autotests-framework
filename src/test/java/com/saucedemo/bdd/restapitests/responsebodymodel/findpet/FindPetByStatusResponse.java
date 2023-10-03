@@ -1,8 +1,8 @@
-package com.saucedemo.bdd.restapitests.responses.addpettostore;
+package com.saucedemo.bdd.restapitests.responsebodymodel.findpet;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.saucedemo.bdd.restapitests.responses.Category;
-import com.saucedemo.bdd.restapitests.responses.Tag;
+import com.saucedemo.bdd.restapitests.responsebodymodel.Category;
+import com.saucedemo.bdd.restapitests.responsebodymodel.Tag;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 @JacksonXmlRootElement(localName = "Pet")
 @Getter
 @Setter
-public class AddNewPetResponse {
+public class FindPetByStatusResponse {
     private long id;
     private Category category;
     private String name;

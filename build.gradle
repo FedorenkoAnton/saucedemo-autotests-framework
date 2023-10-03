@@ -42,6 +42,7 @@ dependencies {
     implementation 'io.qameta.allure:allure-selenide:2.21.0'
 
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.15.0'
+    implementation 'com.jayway.jsonpath:json-path:2.8.0'
 
     implementation 'com.google.guava:guava:31.1-jre'
 

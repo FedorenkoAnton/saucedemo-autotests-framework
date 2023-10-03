@@ -1,4 +1,4 @@
-package com.saucedemo.bdd.restapitests.responses;
+package com.saucedemo.bdd.restapitests.responsebodymodel;
 
 import lombok.Getter;
 import lombok.Setter;

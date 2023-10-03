@@ -22,7 +22,7 @@ Feature: Find pet in the store
 
   Scenario Outline: As a pet store customer I want to find pets by status
     Given user sets up the endpoint /pet/findByStatus
-    And user sets up pet <status> to the request
+    And user sets up pet <status> status to the request
     And sets up accepted media type <media type>
     And sends request to 'find pets by status endpoint' with http method Get
     When response is got service code should be 200

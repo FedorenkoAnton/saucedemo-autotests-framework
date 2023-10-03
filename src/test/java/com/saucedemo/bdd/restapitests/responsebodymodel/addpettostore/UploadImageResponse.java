@@ -1,4 +1,4 @@
-package com.saucedemo.bdd.restapitests.responses.addpettostore;
+package com.saucedemo.bdd.restapitests.responsebodymodel.addpettostore;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
