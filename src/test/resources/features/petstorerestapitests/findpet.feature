@@ -7,7 +7,7 @@ Feature: Find pet in the store
     And assigns request body located at <request's body location>
     And sends request to 'store pet endpoint' with http method Post
     And response is got service code should be 200
-    And user set up pet id 9999
+    And user set up petId 9999
     Then user sets up the endpoint /pet/{{petId}}
     And sets up accepted media type <media type for get pet by id operation>
     And sends request to 'find pet by id endpoint' with http method Get
