@@ -21,14 +21,14 @@ public class AddNewPetStepDefinitions {
     }
 
 
-    @Then("^response body's field id should be (.*)?")
+    @Then("^response body's field \\'id\\' should be (.*)?")
     public void responseBodySFieldIdShouldBe(long id) {
         long idFromResponse = this.addNewPetResponse.getId();
         assertThat(String.format("'id' field's value is %s expected, to be %s", idFromResponse, id), idFromResponse,
                 is(equalTo(id)));
     }
 
-    @And("^response body's field name should be (.*)?")
+    @And("^response body's field \\'name\\' should be (.*)?")
     public void responseBodySFieldNameShouldBeSpankey(String name) {
         String nameFromResponse = this.addNewPetResponse.getName();
         assertThat(String.format("'name field's value is %s, expected to be %s", nameFromResponse, name),
